@@ -1,0 +1,12 @@
+services:
+  front:
+    build: ./front/
+    image: md5online-front:latest
+    container_name: front
+    ports:
+      - 80:80
+    develop:
+      watch:
+        - action: sync
+          path: ./front/src
+          target: /usr/share/nginx/html
