@@ -1,4 +1,4 @@
-const md5 = function (message) {
+export const md5 = function (message) {
 	let m = md5._bytesToWords(message),
 		l = message.length * 8,
 		a = 1732584193,

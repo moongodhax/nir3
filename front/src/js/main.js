@@ -1,4 +1,4 @@
-import init, { md5 } from "./pkg/md5module.js";
+import initSync, { md5 } from "./pkg/md5module.js";
 
 const fileInput = document.getElementById('file-input');
 
@@ -17,7 +17,6 @@ fileInput.addEventListener("change", (event) => {
 			// var md5res = md5(new Uint8Array(buffer));
 			// resultDiv.innerHTML = `md5(${filename}) = ${md5res}`;
 
-			await init();
 			const bytes = new Uint8Array(e.target.result);
 			const result = md5(bytes);
 			resultDiv.innerHTML = `md5(${filename}) = ${result}`;
@@ -26,3 +25,5 @@ fileInput.addEventListener("change", (event) => {
 		reader.readAsArrayBuffer(files[0]);
 	}
 });
+
+initSync();
